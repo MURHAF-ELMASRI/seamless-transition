@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState } from 'react';
 import './slider.scss';
 import User from './data/data';
