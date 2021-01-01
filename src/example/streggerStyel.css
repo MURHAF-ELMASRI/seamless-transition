@@ -1,0 +1,14 @@
+.circle{
+  width:30px;
+    height:30px;
+    border-radius:50%;
+    margin:20px;
+    background-color: red;
+    transform: scale(100%);
+    transition: .4s ease-in-out background;
+}
+
+.circle:hover{
+    background-color: white;
+    transform: scale(200%);
+}

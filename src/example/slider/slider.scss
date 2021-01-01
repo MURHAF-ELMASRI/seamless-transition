@@ -1,0 +1,81 @@
+$text: #404040;
+@mixin db {
+    border: red 2px solid;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .inner {
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        column-gap: 50px;
+        justify-content: center;
+        align-items: center;
+
+        .arrow-left {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            order: 1;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                box-shadow: 0px 0px 30px rgba(0, 0, 80, 0.05);
+            }
+            img {
+                transform: scaleX(-1);
+            }
+        }
+
+        .arrow-right {
+            order: 4;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                box-shadow: 0px 0px 30px rgba(0, 0, 80, 0.05);
+            }
+        }
+        .image-Container {
+            order: 2;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            height: 460px;
+            width: 340px;
+            position: relative;
+            overflow: hidden;
+            @include db;
+             img {
+                @include db;
+                 object-fit: cover;
+                height: 100%;
+            }
+        }
+
+        .text-Container {
+            order: 3;
+            opacity: 1;
+            width: 500px;
+            color: $text;
+            position: relative;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(128, 128, 128, 0.219);
+            z-index: -1;
+            width: 500px;
+            height: 300px;
+            right: 100px;
+            bottom: 100px;
+        }
+    }
+}
